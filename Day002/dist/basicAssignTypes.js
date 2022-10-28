@@ -1,5 +1,4 @@
 "use strict";
-// Types
 // String Example start
 // /*
 let myFirstName = 'Ahsan';
@@ -64,6 +63,9 @@ let valuesTwo = ['Apple', 2, 'Orange', 3, 4, 'Banana'];
 // TypeScript introduced a new data type called Tuple.
 // Tuples are great because they allow each element in the array to be a known type of value.
 let ourTuple = [5, false, "shaikh"];
-console.log(ourTuple);
+// console.log(ourTuple);
+var user; // declare tuple variable
+user = [1, "Steve", true, 20, "Admin"]; // initialize tuple variable
+// You can add new elements to a tuple using the push() method.
 // */
 // Tuples Example Close 
