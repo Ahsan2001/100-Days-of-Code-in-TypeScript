@@ -4,7 +4,6 @@ function MyName(myName: string): string {
 // console.log(MyName('Shaikh Shab'))
 
 
-
 function multiply(value1: number, value2: number):number  {
     return value1 * value2;
 }
