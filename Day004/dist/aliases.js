@@ -1,4 +1,5 @@
 "use strict";
+// Type Aliases allow defining types with a custom name (an Alias).
 const car = {
     year: 2009,
     type: "Toyota",
