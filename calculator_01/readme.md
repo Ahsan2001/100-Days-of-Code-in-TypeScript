@@ -1,2 +1,2 @@
 ## Running command : 
-     npm i ahsan-cli-calculator
+     npx ahsan-cli-calculator
