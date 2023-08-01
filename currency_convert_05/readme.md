@@ -1,3 +1,9 @@
+# Running command
+     npx ahsan-currency-converter
+
+
+
+<!--  top 10 currencies
 1. Kuwaiti Dinar (KWD)
 2. Bahraini Dinar (BHD)
 3. Omani Rial (OMR)
@@ -7,4 +13,4 @@
 7. (tie) Gibraltar Pound (GIP)
 8. (tie) Swiss Franc (CHF)
 9. (tie) Euro (EUR)
-10. U.S. Dollar (USD)
+10. U.S. Dollar (USD) -->
