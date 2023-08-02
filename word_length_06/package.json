@@ -1,7 +1,7 @@
 {
-  "name": "ahsan-word-length",
+  "name": "ahsan-paragraph-length",
   "version": "1.2.0",
-  "description": "Total number of words Cli Project developed with typescript, inquirer and node js",
+  "description": "Total number of alphabets Cli Project developed with typescript, inquirer and node js",
   "main": "index.js",
   "type": "module",
   "bin": "./index.js",
@@ -10,7 +10,7 @@
   },
   "keywords": [
     "Ahsan Shaikh",
-    "Total number of words findout",
+    "Total number of alphabets findout",
     "ts and node js project"
   ],
   "author": "Ahsan Shaikh",

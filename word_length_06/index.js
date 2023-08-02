@@ -13,8 +13,11 @@ async function handleInput() {
         chalk.red("Please insert some text here !");
         return false;
     }
-    let removeSpace = word.paragraph.trim();
-    console.log(removeSpace);
+    let removeExtraSpace = word.paragraph.trim();
+    const totalWords = removeExtraSpace.split(/\s+/);
+    console.log(chalk.green.bold(`Total Words in paragraph:  ${totalWords.length}`));
+    const totalCharacters = removeExtraSpace.replace(/\s+/g, '');
+    console.log(chalk.green.bold(`Total Characters in paragraph:  ${totalCharacters.length}`));
 }
 async function Run() {
     let again;
