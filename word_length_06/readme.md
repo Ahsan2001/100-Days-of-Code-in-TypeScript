@@ -1,2 +1,2 @@
 # Running command
-     npx ahsan-word-length
+     npx ahsan-word-counter
