@@ -1,0 +1,2 @@
+# Running command
+     npx ahsan
