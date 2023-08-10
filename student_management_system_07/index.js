@@ -1,14 +1,6 @@
 #! /usr/bin/env node
 import inquirer from "inquirer";
 import chalk from "chalk";
-// This project is a simple console based Student Management System. 
-// In this project you will be learning how to add new students, 
-// how to enroll students in the given course. Also, you will be 
-// implementing the following operations enroll, view balance, pay 
-// tuition fees, show status, etc. The status will show all the 
-// details of the student including name, id, course enrolled 
-// and balance.This is one of the best projects to implement 
-// the Object Oriented Programming concepts.
 class Student {
     name;
     id;
@@ -21,9 +13,9 @@ class Student {
         this.course = course;
     }
     viewBalance() {
-        this.balance;
+        console.log(chalk.green(`Current Balance: ${this.balance}`));
     }
-    payTutionFees(fees) {
+    payTuitionFees(fees) {
         this.balance = this.balance - fees;
     }
     studentStatus() {
@@ -32,11 +24,13 @@ class Student {
             Roll No: ${this.id}
             Balance: ${this.balance}
             Enrolled Course: ${this.course}
-           `);
+        `);
     }
 }
-async function handleInput() {
-    let studentRollNoGenerated = Math.floor((Math.random() * 90000)) + 10000;
+let newStudent;
+async function HandleInput() {
+    // random roll no generated
+    let studentRollNoGenerated = Math.floor(Math.random() * 90000) + 10000;
     let data = await inquirer.prompt([
         {
             type: "input",
@@ -52,29 +46,52 @@ async function handleInput() {
             type: "list",
             name: "course",
             message: chalk.bold("Select The course you want to enroll"),
-            choices: ['Javascript', 'Html', 'Css', 'Typescript', 'Node']
-        },
-        {
-            type: "number",
-            name: "fees",
-            message: chalk.bold("Enter The course fees"),
+            choices: ['Javascript', 'Html', 'Css', 'Typescript', 'Node'],
         },
     ]);
-    const newStudent = new Student(data.name, studentRollNoGenerated, data.balance, data.course);
-    newStudent.payTutionFees(data.fees);
-    console.log(newStudent.studentStatus());
+    newStudent = new Student(data.name, studentRollNoGenerated, parseFloat(data.balance), data.course);
+}
+await HandleInput();
+async function PerformOpertion() {
+    let operations = await inquirer.prompt([
+        {
+            type: "list",
+            name: "action",
+            message: chalk.bold("Select Your action you want to perform"),
+            choices: ['Show Balance', 'Pay Tuition Fees', 'Show Status'],
+        },
+    ]);
+    if (operations.action === "Show Balance") {
+        newStudent.viewBalance();
+    }
+    if (operations.action === "Pay Tuition Fees") {
+        let fees = await inquirer.prompt([
+            {
+                type: "number",
+                name: "amount",
+                message: chalk.bold("Enter The course fees"),
+            },
+        ]);
+        newStudent.payTuitionFees(fees.amount);
+        newStudent.viewBalance();
+    }
+    if (operations.action === "Show Status") {
+        console.log(newStudent.studentStatus());
+    }
 }
 async function AskQuestions() {
-    let again;
+    let restart;
     do {
-        await handleInput();
-        again = await inquirer.prompt([
+        await PerformOpertion();
+        restart = await inquirer.prompt([
             {
-                type: "input",
+                type: "list",
                 name: "restart",
-                message: chalk.bold("Do you want to use this again? Type yes or no: "),
-            }
+                message: "Another Action Want to Perfrom ?",
+                choices: ['Yes', 'No'],
+            },
         ]);
-    } while (again.restart.toLowerCase() === 'y' || again.restart.toLowerCase() === 'yes');
+    } while (restart.restart === 'Yes');
+    console.log(`App close again start by running "npx ahsan-student_management_system_07" `);
 }
 AskQuestions();

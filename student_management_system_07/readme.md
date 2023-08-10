@@ -1,2 +1,2 @@
 # Running command
-     npx ahsan
+     npx ahsan-student-management-system-07
