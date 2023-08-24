@@ -1,7 +1,7 @@
 {
   "name": "ahsan-adventure-game",
   "version": "1.1.0",
-  "description": "",
+  "description": "Text-based Adventure Game Project",
   "main": "index.js",
   "type": "module",
   "bin": "./index.js",
