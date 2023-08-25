@@ -1,0 +1,24 @@
+{
+  "name": "ahsan-countdown-timer",
+  "version": "1.0.0",
+  "description": "Countdown Timer Project",
+  "main": "index.js",
+  "type": "module",
+  "bin": "./index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Ahsan Shaikh",
+    "Countdown Timer",
+    "Typescript and Nodejs Project"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^9.2.10"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^9.0.3"
+  }
+}
